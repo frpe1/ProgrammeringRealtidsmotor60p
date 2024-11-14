@@ -16,13 +16,25 @@ public class SceneHandling : MonoBehaviour
 
         // Ex 3, här tar vi och använder coroutine för hantera s.k. async processer 
         // som gällde just för LoadSceneAsync
-        StartCoroutine(AsyncLoading("Scene 1 - URP - post process"));
+        // StartCoroutine(AsyncLoading("Scene 1 - URP - post process"));
 
+
+
+    }
+
+    
+    public void StartMainScene() {
+        // Ex 4
+        SceneManager.LoadScene("Scene 1 - URP - post process");
+
+        // Ex 5
+        // StartCoroutine(AsyncLoading("Scene 1 - URP - post process"));
     }
 
     private IEnumerator AsyncLoading(string sceneName) {
         Debug.Log("Before");
 
+        // Fö
         yield return new WaitForSeconds(5);
 
         AsyncOperation aOperation = SceneManager.LoadSceneAsync(sceneName);
